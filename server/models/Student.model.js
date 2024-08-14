@@ -1,5 +1,5 @@
-const mongoose = require("mogoose")
-const { Schema, module } = mongoose
+const mongoose = require("mongoose")
+const { Schema, model } = mongoose
 
 const studentSchema = new Schema({
 
@@ -56,4 +56,4 @@ const studentSchema = new Schema({
 
 const Student = model('Student', studentSchema)
 
-module.export = Student
+module.exports = Student
