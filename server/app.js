@@ -27,6 +27,10 @@ app.get('/api/students', (req, res) => {
   res.json(students)
 })
 
+app.get('*', (req, res) => {
+  res.sendStatus(404)
+})
+
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
