@@ -24,10 +24,14 @@ app.use(cookieParser())
 const studentsRouter = require("./routes/students.routes")
 app.use("/api/students", studentsRouter)
 
-app.get('*', (req, res) => {
-  res.sendStatus(404)
-})
+const cohortsRouter = require("./routes/cohorts.routes")
+app.use("/api/cohorts", cohortsRouter)
+
 
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`)
 })
+
+require("./error-handling")(app)
+
+module.exports = app
