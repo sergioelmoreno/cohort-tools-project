@@ -16,7 +16,7 @@ router.post('/', (req, res, next) => {
 router.get('/', (req, res, next) => {
 
   Cohort
-    .find
+    .find()
     .then((cohorts) => res.json(cohorts))
     .catch((err) => next(err))
 
