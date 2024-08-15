@@ -5,20 +5,20 @@ const studentSchema = new Schema({
 
     "firstName": {
         type: String,
-        required: true
+        required: [true, 'Default error message']
     },
     "lastName": {
         type: String,
-        required: true
+        required: [true, 'Default error message']
     },
     "email": {
         type: String,
-        required: true,
-        unique: true
+        required: [true, 'Default error message'],
+        unique: [true, 'Default error message']
     },
     "phone": {
         type: String,
-        required: true
+        required: [true, 'Default error message']
     },
     "linkedinUrl": {
         type: String,
@@ -49,7 +49,7 @@ const studentSchema = new Schema({
     },
 },
     {
-        Timestamp: true
+        Timestamp: [true, 'Default error message']
     }
 )
 

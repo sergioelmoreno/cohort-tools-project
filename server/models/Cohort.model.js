@@ -5,15 +5,15 @@ const { Schema, model } = mongoose
 const cohortSchema = new Schema({
   inProgress: {
     type: Boolean,
-    required: true
+    required: [true, 'Default error message']
   },
   cohortSlug: {
     type: String,
-    required: true
+    required: [true, 'Default error message']
   },
   cohortName: {
     type: String,
-    required: true
+    required: [true, 'Default error message']
   },
   program: {
     type: String,
@@ -32,11 +32,11 @@ const cohortSchema = new Schema({
   },
   programManager: {
     type: String,
-    required: true
+    required: [true, 'Default error message']
   },
   leadTeacher: {
     type: String,
-    required: true
+    required: [true, 'Default error message']
   },
   totalHours: {
     type: Number,
@@ -44,7 +44,7 @@ const cohortSchema = new Schema({
   }
 },
   {
-    timestamps: true
+    timestamps: [true, 'Default error message']
   })
 
 const Cohort = model('Cohort', cohortSchema)
